@@ -1,0 +1,22 @@
+%h1 All doctors
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Surname
+      %th Description
+      %th Actions
+
+  %tbody
+    - @doctors.each do |doctor|
+      %tr
+        %td= doctor.name
+        %td= doctor.surname
+        %td= doctor.description
+        %td
+          = link_to 'Show', doctor_path(doctor), class: 'btn btn-primary btn-xs'
+          = link_to 'Edit', edit_doctor_path(doctor), class: 'btn btn-warning btn-xs'
+          = link_to 'Delete', doctor_path(doctor), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
+
+= link_to "Add new doctor", new_doctor_path
