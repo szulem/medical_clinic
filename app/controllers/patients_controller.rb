@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[show edit update destroy]
-  
+
   def index
     @patients = Patient.all
   end
@@ -29,6 +29,7 @@ class PatientsController < ApplicationController
       redirect_to @patient, notice: "Patient was successfully updated."
     else
       render 'edit'
+    end
   end
 
   def destroy
