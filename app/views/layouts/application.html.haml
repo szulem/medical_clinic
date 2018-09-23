@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title AssociationsExample
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %nav.navbar.navbar-default
+      .container
+        .container-fluid
+          .navbar-header
+            %a.navbar-brand{href: root_path} Medical Clinic
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li
+                %a{href: doctors_path}
+                  Doctors
+              %li
+                %a{href: patients_path}
+                  Patients
+              %li
+                %a{href: visits_path}
+                  Visits
+            / %form.navbar-form.navbar-left
+            /   .form-group
+            /     %input.form-control{:placeholder => "Search", :type => "text"}/
+            /   %button.btn.btn-default{:type => "submit"} Submit
+            %ul.nav.navbar-nav.navbar-right
+              %li
+                %a{:href => "#"} Link
+    .container
+      = yield

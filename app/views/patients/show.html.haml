@@ -1,2 +1,5 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+%h1= @patient.name
+%h1= @patient.surname
+%h3= @patient.age
+
+= link_to "<-- Back", patients_path
