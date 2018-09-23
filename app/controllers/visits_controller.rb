@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class VisitsController < ApplicationController
   before_action :set_visit, only: %i[show edit update destroy]
 
@@ -5,20 +7,18 @@ class VisitsController < ApplicationController
     @visits = Visit.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @visit = Visit.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @visit = Visit.new(visit_params)
     if @visit.save
-      redirect_to @visit, notice: "Visit was successfully created."
+      redirect_to @visit, notice: 'Visit was successfully created.'
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class VisitsController < ApplicationController
 
   def update
     if @visit.update(visit_params)
-      redirect_to @visit, notice: "Visit was successfully updated."
+      redirect_to @visit, notice: 'Visit was successfully updated.'
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class VisitsController < ApplicationController
 
   def destroy
     @visit.destroy
-    redirect_to visits_path, notice: "Visit was successfully destroyed."
+    redirect_to visits_path, notice: 'Visit was successfully destroyed.'
   end
 
   private
