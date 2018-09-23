@@ -1,0 +1,24 @@
+%h1 All visits
+
+%table.table
+  %thead
+    %tr
+      %th Patient
+      %th Patient age
+      %th Doctor
+      %th Description
+      %th Actions
+
+  %tbody
+    - @visits.each do |visit|
+      %tr
+        %td= visit.patient.name + " " + visit.patient.surname
+        %td= visit.patient.age
+        %td= visit.doctor.name + " " + visit.doctor.surname
+        %td= visit.description
+        %td
+          = link_to 'Show', visit_path(visit), class: 'btn btn-primary btn-xs'
+          = link_to 'Edit', edit_visit_path(visit), class: 'btn btn-warning btn-xs'
+          = link_to 'Delete', visit_path(visit), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
+
+= link_to "Add new visit", new_visit_path

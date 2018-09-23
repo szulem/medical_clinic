@@ -1,0 +1,18 @@
+= simple_form_for(@visit) do |f|
+  .form-group
+    = f.label :price
+    = f.text_field :price, class: "form-control"
+  .form-group
+    = f.label :description
+    = f.text_field :description, class: "form-control"
+  .form-group
+    = f.label :patient_id
+    = f.text_field :patient_id, class: "form-control"
+  .form-group
+    = f.label :doctor_id
+    / = f.text_field :doctor_id, class: "form-control"
+    = f.select 'doctor_id', options_for_select(Doctor.all.collect{ |doctor| [doctor.name, doctor.id]})
+  .form-group
+    = f.submit "Submit", class: "btn btn-default"
+
+= link_to "<-- Back", visits_path

@@ -1,0 +1,6 @@
+%h1= @visit.price
+%h1= @visit.description
+%h3= "Patient: " + @visit.patient.name + " " + @visit.patient.surname
+%h3= "Doctor: " + @visit.doctor.name + " " + @visit.doctor.surname
+
+= link_to "<-- Back", visits_path

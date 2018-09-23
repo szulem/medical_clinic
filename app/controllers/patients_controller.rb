@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[show edit update destroy]
 
@@ -5,20 +7,18 @@ class PatientsController < ApplicationController
     @patients = Patient.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @patient = Patient.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to @patient, notice: "Patient was successfully created."
+      redirect_to @patient, notice: 'Patient was successfully created.'
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class PatientsController < ApplicationController
 
   def update
     if @patient.update(patient_params)
-      redirect_to @patient, notice: "Patient was successfully updated."
+      redirect_to @patient, notice: 'Patient was successfully updated.'
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patients_path, notice: "Patient was successfully destroyed."
+    redirect_to patients_path, notice: 'Patient was successfully destroyed.'
   end
 
   private
