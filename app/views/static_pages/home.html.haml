@@ -3,3 +3,30 @@
   %p All patients are treated with compassion and a non-judgmental attitude. As a Clinic, we are caring and act in ways that respect the dignity, uniqueness, and important worth of every person.
   %p
     %a.btn.btn-primary.btn-lg{href: static_pages_contact_path} Contact us
+
+%h1 All visits
+
+%table.table
+  %thead
+    %tr
+      %th Patient
+      %th Patient age
+      %th Doctor
+      %th Description
+      %th Price
+      %th Actions
+
+  %tbody
+    - Visit.all.each do |visit|
+      %tr
+        %td= visit.patient.name + " " + visit.patient.surname
+        %td= visit.patient.age
+        %td= visit.doctor.name + " " + visit.doctor.surname
+        %td= visit.description
+        %td= visit.price
+        %td
+          = link_to 'Show', visit_path(visit), class: 'btn btn-primary btn-xs'
+          = link_to 'Edit', edit_visit_path(visit), class: 'btn btn-warning btn-xs'
+          = link_to 'Delete', visit_path(visit), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
+
+= link_to "Add new visit", new_visit_path

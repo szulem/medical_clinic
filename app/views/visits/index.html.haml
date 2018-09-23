@@ -7,6 +7,7 @@
       %th Patient age
       %th Doctor
       %th Description
+      %th Price
       %th Actions
 
   %tbody
@@ -16,6 +17,7 @@
         %td= visit.patient.age
         %td= visit.doctor.name + " " + visit.doctor.surname
         %td= visit.description
+        %td= visit.price
         %td
           = link_to 'Show', visit_path(visit), class: 'btn btn-primary btn-xs'
           = link_to 'Edit', edit_visit_path(visit), class: 'btn btn-warning btn-xs'
