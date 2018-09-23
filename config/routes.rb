@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+  get 'static_pages/contact'
   # get 'visits/index'
   # get 'visits/show'
   # get 'visits/new'
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
   # get 'doctor/update'
   # get 'doctor/destroy'
 
-  root 'visits#index'
+  root 'static_pages#home'
   resources :patients
   resources :doctors
   resources :visits
