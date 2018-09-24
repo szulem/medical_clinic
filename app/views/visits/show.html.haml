@@ -2,5 +2,12 @@
 %h1= @visit.description
 %h3= "Patient: " + @visit.patient.name + " " + @visit.patient.surname
 %h3= "Doctor: " + @visit.doctor.name + " " + @visit.doctor.surname
+%p= "Visit start: " + @visit.start_visit.to_s
+%p= "Visit end: " + @visit.end_visit.to_s
+
+/ %p= ((@visit.end_visit - @visit.start_visit) / 3600).round(2)
+= @visit.visit_length
+
+%br/
 
 = link_to "<-- Back", visits_path
