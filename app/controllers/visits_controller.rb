@@ -40,7 +40,7 @@ class VisitsController < ApplicationController
   private
 
   def visit_params
-    params.require(:visit).permit(:price, :description, :patient_id, :doctor_id)
+    params.require(:visit).permit(:price, :description, :start_visit, :end_visit, :patient_id, :doctor_id)
   end
 
   def set_visit
