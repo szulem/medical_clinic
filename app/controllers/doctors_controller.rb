@@ -39,7 +39,7 @@ class DoctorsController < ApplicationController
   private
 
   def doctor_params
-    params.require(:doctor).permit(:name, :surname, :description)
+    params.require(:doctor).permit(:name, :surname, :description, :salary_per_hour)
     # .merge!(
     #   publisher_id: current_user.id,
     # )
