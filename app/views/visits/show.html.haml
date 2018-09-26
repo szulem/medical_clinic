@@ -6,7 +6,7 @@
 %p= "Visit end: " + @visit.end_visit.to_s
 
 / %p= ((@visit.end_visit - @visit.start_visit) / 3600).round(2)
-= @visit.visit_length
+%p= "Visit duration: " + @visit.visit_length.to_s + "h"
 
 %br/
 

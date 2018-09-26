@@ -13,7 +13,10 @@ class VisitsController < ApplicationController
     @visit = Visit.new
   end
 
-  def edit; end
+  def edit
+    @patients = Patient.all
+    @doctors = Doctor.all
+  end
 
   def create
     @visit = Visit.new(visit_params)

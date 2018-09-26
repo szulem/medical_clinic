@@ -1,31 +1,20 @@
 = simple_form_for(@visit) do |f|
   .form-group
-    = f.label :price
-    = f.text_field :price, class: "form-control"
+    = f.input :price
   .form-group
-    = f.label :description
-    = f.text_field :description, class: "form-control"
+    = f.input :description
   .form-group
-    = f.label :start_visit
-    / = f.text_field :start_visit, class: "form-control"
-    .datetimepicker.input-group.date
-      = f.text_field :start_visit, class: "form-control"
-      %span.input-group-addon
-        %span.glyphicon.glyphicon-calendar
+    .row.datetimerange
+      / = f.text_field :start_visit, class: "form-control"
+      = f.input :start_visit, as: :datetime_picker, wrapper: :ranged_datetime, input_html: { data: { date_side_by_side: true } }
+      = f.input :end_visit, as: :datetime_picker, wrapper: :ranged_datetime, input_html: { data: { date_side_by_side: true } }
+
   .form-group
-    = f.label :end_visit
-    .datetimepicker.input-group.date
-      = f.text_field :end_visit, class: "form-control"
-      %span.input-group-addon
-        %span.glyphicon.glyphicon-calendar
+    = f.input :patient_id, collection: @patients
+
   .form-group
-    = f.label :patient_id
-    / = f.text_field :patient_id, class: "form-control"
-    = f.select 'patient_id', options_for_select(Patient.all.collect{ |patient| [patient.surname + " " + patient.name, patient.id]})
-  .form-group
-    = f.label :doctor_id
-    / = f.text_field :doctor_id, class: "form-control"
-    = f.select 'doctor_id', options_for_select(Doctor.all.collect{ |doctor| [doctor.surname + " " + doctor.name, doctor.id]})
+    = f.input :doctor_id, collection: @doctors
+    / = f.select 'doctor_id', options_for_select(Doctor.all.collect{ |doctor| [doctor.surname + " " + doctor.name, doctor.id]})
   .form-group
     = f.submit "Submit", class: "btn btn-default"
 
