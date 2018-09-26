@@ -2,6 +2,7 @@
 
 class VisitsController < ApplicationController
   before_action :set_visit, only: %i[show edit update destroy]
+  before_action :set_all_doctors_and_patients, only: %i[new edit]
 
   def index
     @visits = Visit.all
@@ -45,5 +46,10 @@ class VisitsController < ApplicationController
 
   def set_visit
     @visit = Visit.find(params[:id])
+  end
+
+  def set_all_doctors_and_patients
+    @patients = Patient.all
+    @doctors = Doctor.all
   end
 end
