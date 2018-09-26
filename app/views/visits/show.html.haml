@@ -1,7 +1,7 @@
 %h1= @visit.price
 %h1= @visit.description
-%h3= "Patient: " + @visit.patient.name + " " + @visit.patient.surname
-%h3= "Doctor: " + @visit.doctor.name + " " + @visit.doctor.surname
+%h3= "Patient: " + @visit.patient.name_surname
+%h3= "Doctor: " + @visit.doctor.name_surname
 %p= "Visit start: " + @visit.start_visit.to_s
 %p= "Visit end: " + @visit.end_visit.to_s
 
