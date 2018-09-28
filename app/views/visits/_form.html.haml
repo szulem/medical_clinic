@@ -1,6 +1,6 @@
 = simple_form_for(@visit) do |f|
-  .form-group
-    = f.input :price
+  / .form-group
+  /   = f.input :price
   .form-group
     = f.input :description
   .form-group
@@ -17,5 +17,7 @@
     / = f.select 'doctor_id', options_for_select(Doctor.all.collect{ |doctor| [doctor.surname + " " + doctor.name, doctor.id]})
   .form-group
     = f.submit "Submit", class: "btn btn-default"
+
+  / - @visit.update(price: @visit.visit_cost)
 
 = link_to "<-- Back", visits_path

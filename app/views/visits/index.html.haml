@@ -17,7 +17,8 @@
         %td= visit.patient.age
         %td= visit.doctor.name + " " + visit.doctor.surname
         %td= visit.description
-        %td= visit.price
+        / %td= visit.price
+        %td= visit.visit_cost.to_s + " zł"
         %td
           = link_to 'Show', visit_path(visit), class: 'btn btn-primary btn-xs'
           = link_to 'Edit', edit_visit_path(visit), class: 'btn btn-warning btn-xs'
