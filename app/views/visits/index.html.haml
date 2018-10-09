@@ -25,3 +25,5 @@
           = link_to 'Delete', visit_path(visit), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
 
 = link_to "+ Add new visit", new_visit_path
+
+%p= will_paginate @visits, renderer: BootstrapPagination::Rails, previous_label: "Previous", next_label: "Next", inner_windows: 1, outer_window: 0
