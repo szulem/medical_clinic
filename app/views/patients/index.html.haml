@@ -20,3 +20,5 @@
           = link_to 'Delete', patient_path(patient), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
 
 = link_to "+ Add new patient", new_patient_path
+
+%p= will_paginate @patients, renderer: BootstrapPagination::Rails, previous_label: "Previous", next_label: "Next", inner_windows: 1, outer_window: 0
