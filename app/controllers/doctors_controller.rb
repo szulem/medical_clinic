@@ -3,7 +3,7 @@
 class DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[show edit update destroy]
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.all.paginate(page: params[:page], per_page: 5).order('updated_at DESC')
   end
 
   def show; end
