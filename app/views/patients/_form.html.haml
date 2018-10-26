@@ -9,6 +9,8 @@
     = f.label :age
     = f.text_field :age, class: "form-control"
   .form-group
+    = f.input :date_of_birth, as: :date_picker
+  .form-group
     = f.submit "Submit", class: "btn btn-default"
 
 = link_to "<-- Back", patients_path
