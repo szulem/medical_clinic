@@ -1,5 +1,10 @@
-%h1= @patient.name + " " + @patient.surname
-%br/
-%h4= "<b>Data urodzenia:</b> ".html_safe + @patient.date_of_birth.to_s + " (" + @patient.age_of_patient.to_s + " l.)"
-
+.row
+  .col-md-10
+    %h1= @patient.name + " " + @patient.surname
+    %br
+    %h4= "<b>Data urodzenia:</b> ".html_safe + @patient.date_of_birth.to_s + " (" + @patient.age_of_patient.to_s + " l.)"
+  .col-md-2
+    = image_tag("avatar.gif", class: "img-thumbnail", width: 140)
+%br
+%br
 = link_to "<-- Back", patients_path
