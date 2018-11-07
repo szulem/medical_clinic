@@ -1,6 +1,5 @@
-%h1= @patient.name
-%h1= @patient.surname
-%h3= @patient.date_of_birth
-%h3= @patient.age_of_patient
+%h1= @patient.name + " " + @patient.surname
+%br/
+%h4= "<b>Data urodzenia:</b> ".html_safe + @patient.date_of_birth.to_s + " (" + @patient.age_of_patient.to_s + " l.)"
 
 = link_to "<-- Back", patients_path
