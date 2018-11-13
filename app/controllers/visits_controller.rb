@@ -5,7 +5,7 @@ class VisitsController < ApplicationController
   before_action :set_all_doctors_and_patients, only: %i[new edit]
 
   def index
-    @visits = Visit.all.paginate(page: params[:page], per_page: 5).order('updated_at DESC')
+    @visits = Visit.all.paginate(page: params[:page], per_page: 10).order('updated_at DESC')
   end
 
   def show; end
