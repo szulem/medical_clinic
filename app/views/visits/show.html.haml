@@ -1,14 +1,18 @@
-%h1= @visit.price
-%h1= @visit.description
-%h3= "Patient: " + @visit.patient.name_surname
-%h3= "Doctor: " + @visit.doctor.name_surname
-%p= "Visit start: " + @visit.start_visit.strftime("%Y-%m-%d, %H:%M").to_s
-%p= "Visit end: " + @visit.end_visit.strftime("%Y-%m-%d, %H:%M").to_s
+.row
+  .col-md-10
+    %h1= @visit.price
+    %h1= @visit.description
+    %h3= "Patient: " + @visit.patient.name_surname
+    %h3= "Doctor: " + @visit.doctor.name_surname
+    %p= "Visit start: " + @visit.start_visit.strftime("%Y-%m-%d, %H:%M").to_s
+    %p= "Visit end: " + @visit.end_visit.strftime("%Y-%m-%d, %H:%M").to_s
 
-/ %p= ((@visit.end_visit - @visit.start_visit) / 3600).round(2)
-%p= "Visit duration: " + @visit.visit_length.to_s + " h"
-%p= "Salary per hour: " + @visit.doctor.salary_per_hour.to_s
-%h3= "Visit cost: " + @visit.visit_cost.to_s + " zł"
-%br/
-
+    / %p= ((@visit.end_visit - @visit.start_visit) / 3600).round(2)
+    %p= "Visit duration: " + @visit.visit_length.to_s + " h"
+    %p= "Salary per hour: " + @visit.doctor.salary_per_hour.to_s
+    %h3= "Visit cost: " + @visit.visit_cost.to_s + " zł"
+  .col-md-2
+    = image_tag(@visit.patient.avatar_patient.url(:thumb), class: "img-thumbnail")
+%br
+%br
 = link_to "<-- Back", visits_path
