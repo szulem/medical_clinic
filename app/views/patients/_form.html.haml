@@ -11,6 +11,8 @@
   .form-group
     = f.input :date_of_birth, as: :date_picker
   .form-group
+    = f.input :avatar_patient, class: "form-control"
+  .form-group
     = f.submit "Submit", class: "btn btn-default"
 
 = link_to "<-- Back", patients_path
