@@ -4,7 +4,7 @@
     %br
     %h4= "<b>Data urodzenia:</b> ".html_safe + @patient.date_of_birth.to_s + " (" + @patient.age_of_patient.to_s + " l.)"
   .col-md-2
-    = image_tag("avatar.gif", class: "img-thumbnail", width: 140)
+    = image_tag(@patient.avatar_patient.url(:thumb), class: "img-thumbnail")
 %br
 %br
 = link_to "<-- Back", patients_path
