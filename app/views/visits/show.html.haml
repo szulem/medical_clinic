@@ -1,18 +1,28 @@
 .row
-  .col-md-10
-    %h1= @visit.price
+  .col-md-9
+    /%h1= @visit.price
     %h1= @visit.description
-    %h3= link_to @visit.patient.name_surname, @visit.patient
-    %h3= "Doctor: " + @visit.doctor.name_surname
+    %h3
+      Doctor:
+      = link_to @visit.doctor.name_surname, @visit.doctor
+    %h4= @visit.description
     %p= "Visit start: " + @visit.start_visit.strftime("%Y-%m-%d, %H:%M").to_s
     %p= "Visit end: " + @visit.end_visit.strftime("%Y-%m-%d, %H:%M").to_s
 
     / %p= ((@visit.end_visit - @visit.start_visit) / 3600).round(2)
     %p= "Visit duration: " + @visit.visit_length.to_s + " h"
-    %p= "Salary per hour: " + @visit.doctor.salary_per_hour.to_s
+    %p= "Salary per hour: " + @visit.doctor.salary_per_hour.to_s + " zł"
     %h3= "Visit cost: " + @visit.visit_cost.to_s + " zł"
-  .col-md-2
-    = image_tag(@visit.patient.avatar_patient.url(:thumb), class: "img-thumbnail")
+  .col-md-3
+    %h3 Patient:
+    .thumbnail
+      = image_tag(@visit.patient.avatar_patient.url(:medium))
+      .caption
+        %h3
+          = link_to @visit.patient.name_surname, @visit.patient
+        %p= @visit.patient.age_of_patient.to_s + " yrs"
+        %p
+          %a.btn.btn-primary{href: patient_path(@visit), :role => "button"} Patient's profile
 %br
 %br
 = link_to "<-- Back", visits_path
