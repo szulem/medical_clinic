@@ -18,11 +18,9 @@
     .thumbnail
       = image_tag(@visit.patient.avatar_patient.url(:medium))
       .caption
-        %h3
-          = link_to @visit.patient.name_surname, @visit.patient
+        %h3= link_to @visit.patient.name_surname, @visit.patient
         %p= @visit.patient.age_of_patient.to_s + " yrs"
-        %p
-          %a.btn.btn-primary{href: patient_path(@visit), :role => "button"} Patient's profile
+        %p= link_to "Patient's profile", @visit.patient, class: 'btn btn-primary'
 %br
 %br
 = link_to "<-- Back", visits_path
