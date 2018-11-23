@@ -1,5 +1,15 @@
 %h1= @doctor.name + " " + @doctor.surname
 %p= @doctor.description
 %p= @doctor.salary_per_hour
+%h4 Doctor's visits:
+%ul
+  - @doctor.visits.each do |visit|
+    %li
+      Date:
+      %strong
+        = visit.start_visit.strftime("%Y-%m-%d, %H:%M").to_s + ","
+      Patient:
+      %strong
+        = visit.patient.name_surname
 
 = link_to "<-- Back", doctors_path
