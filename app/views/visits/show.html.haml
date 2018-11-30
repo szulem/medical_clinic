@@ -22,5 +22,7 @@
         %p= @visit.patient.age_of_patient.to_s + " yrs"
         %p= link_to "Patient's profile", @visit.patient, class: 'btn btn-primary'
 %br
+  = link_to 'Edit', edit_visit_path(@visit), class: 'btn btn-warning btn'
+%br
 %br
 = link_to "<-- Back", visits_path
