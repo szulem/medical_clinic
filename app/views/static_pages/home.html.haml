@@ -10,17 +10,17 @@
   %thead
     %tr
       %th Patient
-      %th Patient age
+      %th Date of visit
       %th Doctor
       %th Description
       %th Price
       %th Actions
 
   %tbody
-    - Visit.all.each do |visit|
+    - @visits.each do |visit|
       %tr
         %td= visit.patient.name + " " + visit.patient.surname
-        %td= visit.patient.age_of_patient
+        %td= visit.start_visit.strftime("%Y-%m-%d, %H:%M")
         %td= visit.doctor.name + " " + visit.doctor.surname
         %td= visit.description
         %td= visit.visit_cost.to_s + " zł"
