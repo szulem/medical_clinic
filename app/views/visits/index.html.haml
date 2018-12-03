@@ -14,7 +14,7 @@
     - @visits.each do |visit|
       %tr
         %td= visit.patient.name + " " + visit.patient.surname
-        %td= visit.patient.age
+        %td= visit.patient.age_of_patient
         %td= visit.doctor.name + " " + visit.doctor.surname
         %td= visit.description
         / %td= visit.price
