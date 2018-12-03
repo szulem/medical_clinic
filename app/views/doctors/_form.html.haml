@@ -12,6 +12,5 @@
     = f.label :salary_per_hour
     = f.text_field :salary_per_hour, class: "form-control"
   .form-group
-    = f.submit "Submit", class: "btn btn-default"
-
-= link_to "<-- Back", doctors_path
+    = link_to "<-- Back", doctors_path, class: 'btn btn-default btn'
+    = f.submit "Submit", class: "btn btn-success"

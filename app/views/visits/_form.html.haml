@@ -16,8 +16,7 @@
     = f.input :doctor_id, collection: @doctors
     / = f.select 'doctor_id', options_for_select(Doctor.all.collect{ |doctor| [doctor.surname + " " + doctor.name, doctor.id]})
   .form-group
-    = f.submit "Submit", class: "btn btn-default"
+    = link_to "<-- Back", visits_path, class: 'btn btn-default btn'
+    = f.submit "Submit", class: "btn btn-success"
 
   / - @visit.update(price: @visit.visit_cost)
-
-= link_to "<-- Back", visits_path
