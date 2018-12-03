@@ -1,6 +1,6 @@
 %h1= @doctor.name + " " + @doctor.surname
 %p= @doctor.description
-%p= @doctor.salary_per_hour
+%p= @doctor.salary_per_hour.to_s + " zł / h"
 %h4 Doctor's visits:
 %ul
   - @doctor.visits.each do |visit|
@@ -11,5 +11,6 @@
       Patient:
       %strong
         = visit.patient.name_surname
-
-= link_to "<-- Back", doctors_path
+%br
+%br
+= link_to "<-- Back", doctors_path, class: 'btn btn-default btn'
