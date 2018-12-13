@@ -41,7 +41,7 @@ class VisitsController < ApplicationController
   private
 
   def visit_params
-    params.require(:visit).permit(:description, :start_visit, :end_visit, :patient_id, :doctor_id).merge(price: @visit.visit_cost)
+    params.require(:visit).permit(:description, :start_visit, :end_visit, :patient_id, :doctor_id)
   end
 
   def set_visit
