@@ -1,3 +1,3 @@
 # README
 
-System zarządzania przychodnią lekarską.
+Medical clinic management system.
