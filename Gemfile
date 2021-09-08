@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.0'
 
-gem 'better_errors', '~> 2.5'
+gem 'better_errors', '~> 2.8'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'coffee-rails', '~> 4.2'
